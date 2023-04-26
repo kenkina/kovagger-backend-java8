@@ -28,3 +28,12 @@ The Spring HATEOAS community has its own contributions when it comes to examples
 
 * https://github.com/ingogriebsch/spring-hateoas-siren-samples[Siren HATEOAS Examples] - The maintainer of the Siren extension of Spring HATEOAS has an extra set of examples.
 
+
+
+== Commands
+
+[source,sh]
+----
+docker build -t nightmaretk/kovagger-backend-java8:v1.0 .
+docker run -p 8081:8080 nightmaretk/kovagger-backend-java8:v1.0
+----
