@@ -1,6 +1,11 @@
 # Based on https://spring.io/guides/topicals/spring-boot-docker/
 
-FROM maven:3.9.1-eclipse-temurin-8-alpine
-COPY target/*.jar app.jar
+FROM eclipse-temurin:8u372-b07-jre-alpine
 
-ENTRYPOINT ["java","-jar","/app.jar"]
+ARG EXTRACTED=target/extracted
+COPY ${EXTRACTED}/dependencies/ ./
+COPY ${EXTRACTED}/spring-boot-loader/ ./
+COPY ${EXTRACTED}/snapshot-dependencies/ ./
+COPY ${EXTRACTED}/application/ ./
+
+ENTRYPOINT ["java","org.springframework.boot.loader.JarLauncher"]
