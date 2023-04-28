@@ -34,6 +34,10 @@ The Spring HATEOAS community has its own contributions when it comes to examples
 
 [source,sh]
 ----
+
+cd spring-hateoas-and-spring-data-rest/ && \
+    ../mvnw clean package -DskipTests
+
 cd spring-hateoas-and-spring-data-rest/ && \
     ../mvnw clean package -DskipTests && \
     java -Djarmode=layertools -jar target/*.jar extract --destination target/extracted

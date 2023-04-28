@@ -2,10 +2,6 @@
 
 FROM eclipse-temurin:8u372-b07-jre-alpine
 
-ARG EXTRACTED=target/extracted
-COPY ${EXTRACTED}/dependencies/ ./
-COPY ${EXTRACTED}/spring-boot-loader/ ./
-COPY ${EXTRACTED}/snapshot-dependencies/ ./
-COPY ${EXTRACTED}/application/ ./
+COPY target/*.jar app.jar
 
-ENTRYPOINT ["java","org.springframework.boot.loader.JarLauncher"]
+ENTRYPOINT ["java","-jar","/app.jar"]
