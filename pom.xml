@@ -160,6 +160,7 @@
 					<layers>
 						<enabled>true</enabled>
 					</layers>
+					<skip>true</skip>
 				</configuration>
 			</plugin>
 		</plugins>
