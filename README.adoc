@@ -44,4 +44,6 @@ cd spring-hateoas-and-spring-data-rest/ && \
 
 docker build -t nightmaretk/kovagger-backend-java8:4.0 .
 docker run -p 8081:8080 nightmaretk/kovagger-backend-java8:4.0
+
+kubectl apply -f k8s/
 ----

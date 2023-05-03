@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-hateoas-backend-java8
+  namespace: spring-hateoas
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: spring-hateoas-backend-java8
+  template:
+    metadata:
+      labels:
+        app: spring-hateoas-backend-java8
+    spec:
+      containers:
+        - name: spring-hateoas-backend-java8
+          image: nightmaretk/kovagger-backend-java8:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080

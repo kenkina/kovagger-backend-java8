@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spring-hateoas-backend-java8
+  namespace: spring-hateoas
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: Prefix
+            path: "/spring-hateoas-backend-java8(/|$)(.*)"
+            backend:
+              service:
+                name: spring-hateoas-backend-java8
+                port:
+                  number: 8080
